@@ -1,0 +1,42 @@
+*{
+    margin:0;
+}
+.navbar{
+    height: 100px;
+    width: 100%;
+    background-color: rgba(248,249,250,255);
+    display: flex;
+    position: fixed;
+}
+.heading{
+    margin-left: 150px;
+    align-content: center;
+}
+.pages{
+    align-content: center; 
+    margin-left: 250px;
+}
+.buttons{
+    align-content: center;
+    margin-left: 200px;
+    display: flex;
+    align-items: center;
+}
+.atag{
+    text-decoration: none;
+    margin-left: 30px;
+    font-size: large;
+    color: rgba(162,145,137,255);
+}
+.but{
+    margin-left: 30px;
+    height: 50px;
+    width: 100px;
+    align-items: center;
+    display: flex;
+    border-radius: 5px;
+}
+.para{
+    margin-left: 10px;
+}
+
