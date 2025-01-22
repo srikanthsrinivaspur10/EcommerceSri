@@ -72,3 +72,13 @@ document.getElementById('electronics').addEventListener('click', () => {
 });
 
 fetchProducts()
+
+document.getElementById("point1").addEventListener("click", function(){
+    window.location.href="../LoginPage/login.html";
+});
+document.getElementById("point2").addEventListener("click", function(){
+    window.location.href="../RegisterPage/register.html";
+});
+document.getElementById("point3").addEventListener("click", function(){
+    window.location.href="../CartPage/cart.html";
+})
