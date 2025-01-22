@@ -4,8 +4,61 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CONTACT PAGE</title>
+    <link rel="stylesheet" href="contact.css">
 </head>
+<header>
+    <div class="navbar">
+        <h1 class="heading">Ecommerce</h1>
+        <div class="pages">
+            <a class="atag" href="#">Home</a>
+            <a class="atag" href="../ProductPage/product.html">Products</a>
+            <a class="atag" href="../AboutPage/About.html">About</a>
+            <a class="atag" href="../ContactPage/contact.html">Contact</a>
+        </div>
+        <div class="buttons">
+            <button id="point1" class="but"> <svg  xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-box-arrow-in-right" viewBox="0 0 16 16">
+                <path fill-rule="evenodd" d="M6 3.5a.5.5 0 0 1 .5-.5h8a.5.5 0 0 1 .5.5v9a.5.5 0 0 1-.5.5h-8a.5.5 0 0 1-.5-.5v-2a.5.5 0 0 0-1 0v2A1.5 1.5 0 0 0 6.5 14h8a1.5 1.5 0 0 0 1.5-1.5v-9A1.5 1.5 0 0 0 14.5 2h-8A1.5 1.5 0 0 0 5 3.5v2a.5.5 0 0 0 1 0z"/>
+                <path fill-rule="evenodd" d="M11.854 8.354a.5.5 0 0 0 0-.708l-3-3a.5.5 0 1 0-.708.708L10.293 7.5H1.5a.5.5 0 0 0 0 1h8.793l-2.147 2.146a.5.5 0 0 0 .708.708z"/>
+              </svg> <p class="para">Login</p></button>
+            <button id="point2" class="but"> <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-person-fill-add" viewBox="0 0 16 16">
+                <path d="M12.5 16a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7m.5-5v1h1a.5.5 0 0 1 0 1h-1v1a.5.5 0 0 1-1 0v-1h-1a.5.5 0 0 1 0-1h1v-1a.5.5 0 0 1 1 0m-2-6a3 3 0 1 1-6 0 3 3 0 0 1 6 0"/>
+                <path d="M2 13c0 1 1 1 1 1h5.256A4.5 4.5 0 0 1 8 12.5a4.5 4.5 0 0 1 1.544-3.393Q8.844 9.002 8 9c-5 0-6 3-6 4"/>
+              </svg><p class="para">Register</p> </button>
+            <button id="point3" class="but"> <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-cart-fill" viewBox="0 0 16 16">
+                <path d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5M5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4m7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4m-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2m7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2"/>
+              </svg> <p class="para">Cart(1)</p> </button>
+        </div>
+    </div>
+</header>
 <body>
-    <h1>This is contact page</h1>
+    <div class="contactH">
+        <h1 class="coH">Contact Us</h1>
+    </div>
+    <hr>
+    <div class="form">
+        <label class="la" for="Name">Name</label> <br>
+        <input class="ip1" type="text" placeholder="Enter your name" name="Name" required> <br>
+        <label class="la" for="email">Email</label><br>
+        <input class="ip2" type="email" placeholder="name@example.com" name="email" required> <br>
+        <label class="la" for="message">message</label><br>
+        <textarea class="ip3" placeholder="Enter your message" name="message" required></textarea> 
+        <button class="sb">Send</button>
+    </div>
+    <script>
+        document.getElementById("point1").addEventListener("click", function(){
+    window.location.href="../LoginPage/login.html";
+});
+document.getElementById("point2").addEventListener("click", function(){
+    window.location.href="../RegisterPage/register.html";
+});
+document.getElementById("point3").addEventListener("click", function(){
+    window.location.href="../CartPage/cart.html";
+})
+
+    </script>
 </body>
+
+<footer class="foot">
+    <span class="footp">Made with ❤️ by</span>  <span class="name"><strong>SRIKANTH G</strong></span>
+ </footer>
 </html>
