@@ -33,24 +33,32 @@ document.addEventListener('DOMContentLoaded', function () {
             const productCard = document.createElement('div');
             productCard.classList.add('productCard');
             productCard.innerHTML = `
-            <div class="picdiv"> <img src="${product.image}" alt="${product.title}"> </div>
-            <div class="picName"><h3>${product.title}</h3><div>
-            <div class="picinfo">
-            <div class="picinfo1">
-            <button class="decrement" data-product-id="${productId}">-</button>
-            <p>${product.quantity}</p>
-            <button class="increment" data-product-id="${productId}">+</button>
-            </div>
-             <div class="picinfo2">${product.quantity} × $${product.price}</div>
-            </div>
+           
+            <div class="picdiv"> <img class="cartpic" src="${product.image}" alt="${product.title}"> </div>
+            <div class="picName"><h3>${product.title}</h3></div>
+            <div class="picinfo"> 
+             
+            </div>   
+             <hr class="line">
+            
+          
+        
+            
                 
                 
                 
             `;
             cartContainer.appendChild(productCard);
+            
         }
     }
-
+    // <div class="picinfo1">
+    // <button class="decrement" data-product-id="${productId}">-</button>
+    // <p>${product.quantity}</p>
+    // <button class="increment" data-product-id="${productId}">+</button>
+    // </div>
+    //  <div class="picinfo2">${product.quantity} × $${product.price}</div>
+    //  </div>
     document.querySelectorAll('.decrement').forEach(button => {
         button.addEventListener('click', handleDecrement);
     });

@@ -45,7 +45,7 @@
     padding: 20px;
     display: flex;
     flex-direction: column;
-    gap: 15px;
+    
 }
 
 .item-list-heading {
@@ -59,10 +59,10 @@
     display: flex;
     align-items: center;
     padding: 15px;
-    border: 1px solid #ddd;
-    border-radius: 8px;
     background-color: #f9f9f9;
     width: 60%;
+    align-items: center;
+    /* justify-content: center; */
 }
 .gobut {
     height: 50px;
@@ -100,4 +100,29 @@
     margin-top: 60px;
     text-align: center;
     font-size: large;
+}
+.cartpic{
+    width: 150px;
+    height: 100px;
+}
+.picinfo{
+    background-color: green;
+    height: 200px;
+    width: 200px;
+    margin-left: 100px;
+}
+.picinfo1{
+    background-color: yellow;
+    margin-top: 30px;
+}
+.picinfo2{
+    background-color: aqua;
+}
+.picName{
+    margin-left: 40px;
+    width: 360px;
+}
+.line{
+    height: 2px;
+    color: red;
 }
