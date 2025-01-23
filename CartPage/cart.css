@@ -40,3 +40,59 @@
     margin-left: 10px;
 }
 
+.productContainer {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 20px;
+}
+
+.productCard {
+    width: 200px;
+    margin: 10px;
+    border: 1px solid #ddd;
+    padding: 10px;
+    text-align: center;
+}
+
+.productCard img {
+    width: 100%;
+    height: auto;
+}
+
+.productCard h3 {
+    font-size: 16px;
+}
+
+.productCard button {
+    margin: 5px;
+    padding: 5px 10px;
+}
+
+.productCard .quantity {
+    margin: 5px;
+    font-size: 14px;
+}
+
+.gobut{
+    height: 50px;
+    width: 160px;
+    margin-top: 30px;
+    margin-left: 630px;
+
+}
+.godiv{
+    height: 300px;
+    width: 100%;
+    background-color: aqua;
+    margin-top: 10px;
+}
+.defaultdiv{
+    padding-top: 100px;
+    padding-left: 680px;
+    padding-bottom: 20px;
+}
+.cartH{
+    margin-left: 570px;
+}
+
