@@ -15,12 +15,18 @@ document.addEventListener('DOMContentLoaded', function () {
     updateCartCount();
     const cart = JSON.parse(localStorage.getItem('cart')) || {};
     const cartContainer = document.getElementById('productContainer');
-    const productMain =document.createElement('div')
-    productMain.innerHTML=`<div class="hcont"><h2 class="item-list-heading">Item List</h2>
+    const productMain1 =document.createElement('div');
+    const productMain2=document.createElement('div');
+    productMain1.innerHTML=`<div class="hcont"><h2 class="item-list-heading">Item List</h2>
     </div>
-    <hr class=line1>`
-    productMain.classList.add("container");
-    cartContainer.appendChild(productMain);
+    <hr class=line1>`;
+
+    productMain1.classList.add("container1");
+    productMain2.classList.add("container2");
+    
+
+    cartContainer.appendChild(productMain1);
+    cartContainer.appendChild(productMain2);
 
     if (Object.keys(cart).length === 0) {
         cartContainer.innerHTML = 
@@ -34,10 +40,13 @@ document.addEventListener('DOMContentLoaded', function () {
             window.location.href = '../HomePage/home.html';
         });
     } else {
+        let totalAmount=0;
         for (const productId in cart) {
             const product = cart[productId];
             const productCard = document.createElement('div');
+            const productTotal=document.createElement('div');
             productCard.classList.add('productCard');
+            productTotal.classList.add("total")
             productCard.innerHTML = `
            
             <div class="picdiv"> <img class="cartpic" src="${product.image}" alt="${product.title}"> </div>
@@ -52,8 +61,13 @@ document.addEventListener('DOMContentLoaded', function () {
             </div>   
             
               `;
+              totalAmount +=product.quantity*product.price
+              productTotal.innerHTML=`<p>total price:$${totalAmount}</p>`
+
+              
             // cartContainer.appendChild(productCard);
-            productMain.appendChild(productCard);
+            productMain1.appendChild(productCard);
+            productMain2.appendChild(productTotal);
             
         }
     }
