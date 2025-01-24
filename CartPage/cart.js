@@ -15,6 +15,12 @@ document.addEventListener('DOMContentLoaded', function () {
     updateCartCount();
     const cart = JSON.parse(localStorage.getItem('cart')) || {};
     const cartContainer = document.getElementById('productContainer');
+    const productMain =document.createElement('div')
+    productMain.innerHTML=`<div class="hcont"><h2 class="item-list-heading">Item List</h2>
+    </div>
+    <hr class=line1>`
+    productMain.classList.add("container");
+    cartContainer.appendChild(productMain);
 
     if (Object.keys(cart).length === 0) {
         cartContainer.innerHTML = 
@@ -37,21 +43,22 @@ document.addEventListener('DOMContentLoaded', function () {
             <div class="picdiv"> <img class="cartpic" src="${product.image}" alt="${product.title}"> </div>
             <div class="picName"><h3>${product.title}</h3></div>
             <div class="picinfo"> 
-             
+             <div class="picinfo1">
+             <p class="decrement" data-product-id="${productId}">-</p> <p class="quant">${product.quantity}</p> <p class="increment" data-product-id="${productId}">+</p>
+             </div>
+             <div class="picinfo2">
+             <P class="pprice">${product.quantity} × $${product.price}</p>
+             </div>
             </div>   
-             <hr class="line">
             
-          
-        
-            
-                
-                
-                
-            `;
-            cartContainer.appendChild(productCard);
+              `;
+            // cartContainer.appendChild(productCard);
+            productMain.appendChild(productCard);
             
         }
     }
+ 
+    // productMain.appendChild(productCard);
     // <div class="picinfo1">
     // <button class="decrement" data-product-id="${productId}">-</button>
     // <p>${product.quantity}</p>
