@@ -1,4 +1,3 @@
-// Function to update cart count (to be reused in both home.js and cart.js)
 function updateCartCount() {
     const cart = JSON.parse(localStorage.getItem('cart')) || {};
     const cartQuantity = Object.values(cart).reduce((total, item) => total + item.quantity, 0);
@@ -15,15 +14,14 @@ document.addEventListener('DOMContentLoaded', function () {
     updateCartCount();
     const cart = JSON.parse(localStorage.getItem('cart')) || {};
     const cartContainer = document.getElementById('productContainer');
-    const productMain1 =document.createElement('div');
-    const productMain2=document.createElement('div');
-    productMain1.innerHTML=`<div class="hcont"><h2 class="item-list-heading">Item List</h2>
-    </div>
-    <hr class=line1>`;
+    const productMain1 = document.createElement('div');
+    const productMain2 = document.createElement('div');
+    
+    productMain1.innerHTML = `<div class="hcont"><h2 class="item-list-heading">Item List</h2></div><hr class="line1">`;
+    productMain2.innerHTML = `<div class="hcont1"><h2 class="item-list-heading1">Cart Summary</h2>`;
 
     productMain1.classList.add("container1");
     productMain2.classList.add("container2");
-    
 
     cartContainer.appendChild(productMain1);
     cartContainer.appendChild(productMain2);
@@ -35,51 +33,61 @@ document.addEventListener('DOMContentLoaded', function () {
          <button class="gobut" id="goBackButton"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-left" viewBox="0 0 16 16">
   <path fill-rule="evenodd" d="M15 8a.5.5 0 0 0-.5-.5H2.707l3.147-3.146a.5.5 0 1 0-.708-.708l-4 4a.5.5 0 0 0 0 .708l4 4a.5.5 0 0 0 .708-.708L2.707 8.5H14.5A.5.5 0 0 0 15 8"/>
 </svg> Continue Shopping</button>
-        <div>`;
+        </div>`;
         document.getElementById('goBackButton').addEventListener('click', function () {
             window.location.href = '../HomePage/home.html';
         });
     } else {
-        let totalAmount=0;
+        let totalAmount = 0;
+        let totalQuantity = 0;  
         for (const productId in cart) {
             const product = cart[productId];
             const productCard = document.createElement('div');
-            const productTotal=document.createElement('div');
             productCard.classList.add('productCard');
-            productTotal.classList.add("total")
             productCard.innerHTML = `
-           
-            <div class="picdiv"> <img class="cartpic" src="${product.image}" alt="${product.title}"> </div>
-            <div class="picName"><h3>${product.title}</h3></div>
-            <div class="picinfo"> 
-             <div class="picinfo1">
-             <p class="decrement" data-product-id="${productId}">-</p> <p class="quant">${product.quantity}</p> <p class="increment" data-product-id="${productId}">+</p>
-             </div>
-             <div class="picinfo2">
-             <P class="pprice">${product.quantity} × $${product.price}</p>
-             </div>
-            </div>   
-            
-              `;
-              totalAmount +=product.quantity*product.price
-              productTotal.innerHTML=`<p>total price:$${totalAmount}</p>`
+                <div class="picdiv"> 
+                    <img class="cartpic" src="${product.image}" alt="${product.title}">
+                </div>
+                <div class="picName"><h3>${product.title}</h3></div>
+                <div class="picinfo"> 
+                    <div class="picinfo1">
+                        <p class="decrement" data-product-id="${productId}">-</p> 
+                        <p class="quant">${product.quantity}</p> 
+                        <p class="increment" data-product-id="${productId}">+</p>
+                    </div>
+                    <div class="picinfo2">
+                        <P class="pprice">${product.quantity} × $${product.price}</p>
+                    </div>
+                </div>`;
+            totalAmount += product.quantity * product.price;
+            totalQuantity += product.quantity;  
 
-              
-            // cartContainer.appendChild(productCard);
             productMain1.appendChild(productCard);
-            productMain2.appendChild(productTotal);
-            
         }
+
+        const productTotal = document.createElement('div');
+        productTotal.classList.add("total");
+        productTotal.innerHTML = `
+        <div class="first"> 
+            <div class="subt1">
+                <p class="bp">Products(${totalQuantity})</p>  <!-- Displaying the total number of products -->
+                <p class="bp">Shipping</p>
+                <h2 class="bh">Total Amount</h2>
+            </div>
+            
+            <div class="subt2">
+                <p class="bp1">${totalAmount}</p>
+                <p class="bp1">30</p>
+                <h2 class="bh1">$${totalAmount + 30}</h2>
+            </div> 
+        </div>
+        <div class="butT">
+            <button class="check">Go to checkout</button>
+        </div>`;
+
+        productMain2.appendChild(productTotal);
     }
- 
-    // productMain.appendChild(productCard);
-    // <div class="picinfo1">
-    // <button class="decrement" data-product-id="${productId}">-</button>
-    // <p>${product.quantity}</p>
-    // <button class="increment" data-product-id="${productId}">+</button>
-    // </div>
-    //  <div class="picinfo2">${product.quantity} × $${product.price}</div>
-    //  </div>
+
     document.querySelectorAll('.decrement').forEach(button => {
         button.addEventListener('click', handleDecrement);
     });
