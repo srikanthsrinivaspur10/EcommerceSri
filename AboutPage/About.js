@@ -1,4 +1,4 @@
-document.getElementById("point1").addEventListener("click", function(){
+  document.getElementById("point1").addEventListener("click", function(){
     window.location.href="../LoginPage/login.html";
 });
 document.getElementById("point2").addEventListener("click", function(){

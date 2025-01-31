@@ -6,7 +6,7 @@ function updateCartCount() {
     if (cartQuantity > 0) {
         cartButton.innerHTML = `Cart(${cartQuantity})`;
     } else {
-        cartButton.innerHTML = `Cart`;
+        cartButton.innerHTML = `Cart()`;
     }
 }
 

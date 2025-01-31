@@ -103,7 +103,7 @@
 
 .footp{
     margin-top: 60px;
-    margin-left: 600px;
+    margin-left: 680px;
     font-size: large;
    
     
@@ -114,4 +114,9 @@
     font-size: large;
     font-weight: bold;
 }
+
+.atag:hover{
+    color: black;
+}
+
 

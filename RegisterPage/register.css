@@ -93,3 +93,8 @@
 .col{
     color: rgb(89, 225, 225);
 }
+
+.atag:hover{
+    color: black;
+}
+
